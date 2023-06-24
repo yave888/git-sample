@@ -21,7 +21,8 @@
         <div class="container" >
             <section >
                 <p id="output"></p>
-                <p id="ke"></p>
+                <p id="output2"></p>
+                <p id="output3"></p>
             </section>
         </div><!-- /.container -->
     </main>
@@ -34,18 +35,15 @@
     <script>
         'use script';
 
-        let enemy = 100;
-        let count = 0
-        window.alert('バトルスタート！');
-
-        while(enemy > 0){
-            const attack = Math.floor(Math.random() * 30) + 1;
-            document.getElementById("output").textContent = 'モンスターに' + attack + 'のダメージ!'
-            enemy = enemy - attack;
-            count += 1
-            
+        function total(price){
+            const tax = 0.1;
+            return price + price * tax;
         }
-        document.getElementById("ke").textContent = "モンスターを倒すのにかかったターンは" + count + "回"
+        document.getElementById("output").textContent =  'コーヒーメーカーの値段は' + total(8000) + '円(税込み)です。'
+
+        document.getElementById("output2").textContent =  'コーヒー豆の値段は' + total(2000) + '円(税込み)です。'
+
+        document.getElementById("output3").textContent =  'コーヒーフィルターの値段は' + total(550) + '円(税込み)です。'
     </script>
 
 </body>

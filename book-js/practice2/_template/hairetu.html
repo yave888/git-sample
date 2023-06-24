@@ -21,7 +21,8 @@
         <div class="container" >
             <section >
                 <p id="output"></p>
-                <p id="ke"></p>
+                <p id="output2"></p>
+                <p id="output3"></p>
             </section>
         </div><!-- /.container -->
     </main>
@@ -34,18 +35,24 @@
     <script>
         'use script';
 
-        let enemy = 100;
-        let count = 0
-        window.alert('バトルスタート！');
-
-        while(enemy > 0){
-            const attack = Math.floor(Math.random() * 30) + 1;
-            document.getElementById("output").textContent = 'モンスターに' + attack + 'のダメージ!'
-            enemy = enemy - attack;
-            count += 1
-            
+        function fizzbuzz(num){
+            if(num % 3 ===  0 && num % 5 === 0){
+                return 'fizzbuzz';
+            }else if(num % 3 === 0){
+                return 'fizz';
+            }else if(num % 5 ===0){
+                return 'buzz';
+            }
         }
-        document.getElementById("ke").textContent = "モンスターを倒すのにかかったターンは" + count + "回"
+       // let num = window.prompt("数字を入力してね")
+
+        let i = 1;
+        while(i <= 3){
+            console.log(fizzbuzz(i));
+            i += 1;
+        }
+
+
     </script>
 
 </body>
