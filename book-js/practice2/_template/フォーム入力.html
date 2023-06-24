@@ -8,6 +8,7 @@
     <link href="../../_common/images/favicon.ico" rel="shortcut icon">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
     <link href="../../_common/css/style.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -17,11 +18,14 @@
             <h2>サブタイトル</h2>
         </div><!-- /.container -->
     </header>
-    <main id = 'unti'>
-        <div class="container" >
-            <section >
-                <h1>やることリスト</h1>
-                <ul id="list"></ul>
+    <main id='unti'>
+        <div class="container">
+            <section>
+                <form action="#" id="form">
+                    <input type="text" name="word">
+                    <input type="submit" value="検索">
+                </form>
+                <p id="output"></p>
             </section>
         </div><!-- /.container -->
     </main>
@@ -31,16 +35,16 @@
         </div><!-- /.container -->
     </footer>
 
-<script>
-    'use strict';
-
-    let todo = ["デザイン作成","データ作成","ガチャ爆死","ストーリー進行","やけくそ"];
-    todo.push(" 歯医者に行く");
-    for(let item of todo){
-        const li = `<li>${item}</li>`; //`な点に注意   'じゃないよ
-        document.getElementById('list').insertAdjacentHTML('afterend', li);
-    }
-</script>
+    <script>
+        'use strict';
+        
+        document.getElementById('form').onsubmit = function(){
+            event.preventDefault();
+            const search = document.getElementById('form').word.value;
+            document.getElementById('output').textContent = `「${search}」の検索中...`
+            console.log('クリックされました');
+        }
+    </script>
 
 </body>
 
