@@ -21,7 +21,9 @@
     <main id='unti'>
         <div class="container">
             <section>
-              <p>最終アクセス日時:<span id="time"></span></p>
+                <p>円周率は<span id="p1"></span>です。</p>
+                <p>普通に切り捨てると<span id="floor"></span>です。</p>
+                <p>小数点第2位で切り捨てると<span id="output"></span>です。</p>
             </section>
         </div><!-- /.container -->
     </main>
@@ -30,29 +32,21 @@
             <p>JavaScript Samples</p>
         </div><!-- /.container -->
     </footer>
-
+    
     <script>
         'use strict';
-        
-        const now = new Date();
-        console.log(now);
-        const year = now.getFullYear();
-        let month = now.getMonth();
-        const date = now.getDate();
-        let hour = now.getHours();
-        const min = now.getMinutes();
 
-            if(hour > 12){
-            hour = `${hour}:${min}pm`
-            }else {
-            hour = `${hour}:${min}am`;
-        };
+        document.getElementById('p1').textContent = Math.PI;
+        document.getElementById('floor').textContent = Math.floor(Math.PI);
 
-        console.log(month);
-        const output = `${year}/${month + 1}/${date} ${hour}`;
-        document.getElementById("time").textContent = output;
+        function point(num, digit){
+            const mover = 10 ** digit;
+            return Math.floor(num * mover) / mover;
+        }
 
+        document.getElementById("output").textContent = point(Math.PI, 2);
 
+        Math.floor(Math.random() * 6) + 1;
     </script>
 
 </body>
