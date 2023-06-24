@@ -17,9 +17,9 @@
             <h2>サブタイトル</h2>
         </div><!-- /.container -->
     </header>
-    <main>
-        <div class="container">
-            <section>
+    <main id = 'unti'>
+        <div class="container" >
+            <section >
 
             </section>
         </div><!-- /.container -->
@@ -29,6 +29,20 @@
             <p>JavaScript Samples</p>
         </div><!-- /.container -->
     </footer>
+
+    <script>
+        'use script';
+
+        let enemy = 100;
+        window.alert('バトルスタート！');
+
+        while(enemy > 0){
+            const attack = Math.floor(Math.random() * 30) + 1;
+            console.log('モンスターに' + attack + 'のダメージ!');
+            enemy = enemy - attack;
+        }
+        console.log("モンスターを倒した");
+    </script>
 
 </body>
 
