@@ -10,3 +10,8 @@ public class Main{
         System.out.println("平均点:" + avg);
     }
 }
+
+
+
+
+

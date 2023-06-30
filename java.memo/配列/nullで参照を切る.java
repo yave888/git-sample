@@ -5,5 +5,7 @@ public class Main{
       array = null;
       array[0] = 10;
       System.out.println(array[0]);
+
+      
   }
 }
