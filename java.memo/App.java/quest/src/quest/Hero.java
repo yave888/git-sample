@@ -7,10 +7,14 @@ public class Hero {
     Sword sword;
     final int maxhp = 100;
 
-public Hero(String name){
-     this.hp = 100;
-     this.name = name;
-}
+    public Hero(String name){
+        this.hp = 100;
+        this.name = name;
+    }
+
+    public Hero(){
+        this("ダミー");
+    }
 
 
     public void sleep(){
