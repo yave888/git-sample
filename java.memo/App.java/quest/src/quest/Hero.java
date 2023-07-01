@@ -1,8 +1,17 @@
 package quest;
 
+import quest.Sword;
 public class Hero {
     String name;//名前の宣言
     int hp;     //HPの宣言
+    Sword sword;
+    final int maxhp = 100;
+
+public Hero(String name){
+     this.hp = 100;
+     this.name = name;
+}
+
 
     public void sleep(){
         this.hp = 100;//自分自身のhpフィールド
@@ -26,5 +35,8 @@ public class Hero {
         System.out.println(this.name + "は、逃げ出した！");
         System.out.println("GAMEOVER");
         System.out.println("最終HPは" + this.hp + "でした");
+    }
+    public void attack(){
+        System.out.println(this.name + "は" + sword.name + "で攻撃した！");
     }
 }
