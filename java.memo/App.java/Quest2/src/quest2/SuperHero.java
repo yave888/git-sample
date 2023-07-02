@@ -1,20 +1,9 @@
 package quest2;
 
-public class SuperHero {
-    String name = "ミナト";
-    int hp = 100;
+public class SuperHero extends Hero{
+    String name = "スーパーミナト";
     boolean flying;//flyingフィールドを追加
 
-    //戦う
-     public void attack(Matango m){
-        System.out.println(this.name + "の攻撃！");
-        m.hp -= 5;
-        System.out.println("5ポイントのダメージを与えた！");
-    }
-    //逃げる
-     public void run(){
-        System.out.println(this.name + "は逃げ出した！");
-    }
     //飛ぶ
     public void fly(){
         this.flying = true;
@@ -24,5 +13,20 @@ public class SuperHero {
     public void land(){
         this.flying = false;
         System.out.println(this.name + "は着地した");
+    }
+    public void run() {
+        System.out.println(this.name + "は逃げ出した！");
+    }
+    //飛んでいる時は二回攻撃
+    //この時のsuperは「今より一つ内側のインスタンス部分を表す予約語」
+    public void attack(Matango m){
+        super.attack(m);//オーバーロード
+        if(this.flying){
+            super.attack(m);
+        }
+    }
+    public SuperHero(){
+        super();
+        System.out.println("SUPER HEROのコンストラクタ起動");
     }
 }
