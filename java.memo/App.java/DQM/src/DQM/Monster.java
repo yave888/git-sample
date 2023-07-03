@@ -1,8 +1,8 @@
 package DQM;
 
 public abstract class Monster {
-    int hp;
-    String name;
+    protected int hp;
+    protected String name;
 
     public Monster(String name, int hp) {
         this.name = name;
@@ -10,7 +10,9 @@ public abstract class Monster {
         System.out.println(this.name + "が現れた！");
     }
 
-    public void run() {
-        System.out.println("モンスターは逃げ出した！");
+    public abstract void run();
+
+    public int getHp() {
+        return hp;
     }
 }
