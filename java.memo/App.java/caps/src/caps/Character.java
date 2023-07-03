@@ -48,7 +48,9 @@ public abstract class Character {
     public void run(){
         System.out.println(getName() + "は逃げ出した！");
     }
-
+        public String toString() {
+        return "名前: " + getName() + "/ HP: " + getHp();
+    }
 
     public abstract void attack();
 }

@@ -1,17 +1,19 @@
 package caps;
 
 public class Wizard extends Character {
-    private int mp;
+    
     private Wand wand;
 
     public Wizard(String name, int mp) {
         super();
         setName(name);
         setHp(100); // HPの初期値を設定
-        this.mp = mp;
+        setmp(100);
         wand = new Wand(); // Wandのインスタンスを生成して代入
         wand.setPower(30); // wandのパワーを設定
         System.out.println(getName() + "が生まれた！");
+        System.out.println(toString());
+        System.out.println("");
     }
 
     public void heal(Hero h) {
@@ -29,4 +31,5 @@ public class Wizard extends Character {
         // Wizardの攻撃処理を実装
         System.out.println(getName() + "の攻撃！");
     }
+
 }
